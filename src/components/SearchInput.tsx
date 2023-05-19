@@ -1,4 +1,5 @@
-import { ChangeEventHandler } from 'react'
+import { ChangeEventHandler } from 'react';
+import '../styles/SearchInput.css';
 
 type SearchInputProps = {
   onInputChange: ChangeEventHandler<HTMLInputElement>;
@@ -7,7 +8,7 @@ type SearchInputProps = {
 
 const SearchInput = ({ onInputChange, keyword }: SearchInputProps) => {
   return (
-    <input value={keyword} onChange={onInputChange} />
+    <input className="input" value={keyword} onChange={onInputChange} />
   )
 }
 

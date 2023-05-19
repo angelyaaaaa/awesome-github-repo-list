@@ -41,17 +41,15 @@ const ResultRow = (item: ListItemType) => {
 
 const ResultList = ({ list }: ResultListProps) => {
   return (
-    <>
-      <div>
-        <dl>
-          {list.map((item) => (
-            <dt key={item.id}>
-              <ResultRow {...item} />
-            </dt>
-          ))}
-        </dl>
-      </div>
-    </>
+    <div className="result-list">
+      <dl>
+        {list.map((item) => (
+          <dt key={item.id}>
+            <ResultRow {...item} />
+          </dt>
+        ))}
+      </dl>
+    </div>
   )
 }
 
