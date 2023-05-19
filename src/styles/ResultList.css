@@ -1,0 +1,62 @@
+.result-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .result-name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .avatar {
+      width: 20px;
+      height: 20px;
+    }
+    .text {
+      font-size: 14px; 
+    }
+  }
+
+  .result-description { }
+  .result-tags {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .tag {
+      margin-right: 5px;
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 5px;
+      background-color: #eaeaea;
+    }
+  }
+
+  .result-infos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .language {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+    .stars {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+    .watchers {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+    .last-updated {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+
+
+
