@@ -8,7 +8,9 @@ type SearchInputProps = {
 
 const SearchInput = ({ onInputChange, keyword }: SearchInputProps) => {
   return (
-    <input className="input" value={keyword} onChange={onInputChange} />
+    <div className="input-wrapper">
+      <input value={keyword} onChange={onInputChange} />
+    </div>
   )
 }
 

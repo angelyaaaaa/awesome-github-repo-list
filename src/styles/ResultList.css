@@ -1,11 +1,15 @@
 .result-list {
   width: 100%;
-  height: 80vh;
+  /* height: 80vh; */
 }
 .result-row {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border: 1px solid #388bfd1a;
+  padding: 16px;
+  margin-top: 30px;
+
   .result-name {
     display: flex;
     align-items: center;
@@ -17,21 +21,30 @@
     }
     .text {
       font-size: 14px; 
+      font-weight: 500;
+      color: #2f81f7;
     }
   }
 
-  .result-description { }
+  .result-description {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #e6edf3;
+  }
   .result-tags {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 10px;
 
     .tag {
       margin-right: 5px;
       font-size: 12px;
+      font-weight: 500;
       padding: 2px 5px;
       border-radius: 5px;
-      background-color: #eaeaea;
+      color: #2f81f7;
+      background-color: #388bfd1a;
     }
   }
 
@@ -39,6 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 10px;
 
     .language {
       margin-right: 10px;

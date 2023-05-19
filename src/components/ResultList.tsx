@@ -14,6 +14,8 @@ export type ListItemType = {
 
 type ResultListProps = {
   list: ListItemType[];
+  isLoading: boolean;
+  error?: Error;
 }
 
 const ResultRow = (item: ListItemType) => {
@@ -39,7 +41,7 @@ const ResultRow = (item: ListItemType) => {
   )
 }
 
-const ResultList = ({ list }: ResultListProps) => {
+const ResultList = ({ list, isLoading, error }: ResultListProps) => {
   return (
     <div className="result-list">
       <dl>
@@ -49,6 +51,8 @@ const ResultList = ({ list }: ResultListProps) => {
           </dt>
         ))}
       </dl>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: {error.message}</p>}
     </div>
   )
 }
