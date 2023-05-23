@@ -29,7 +29,7 @@ const ResultRow = (item: ListItemType) => {
       <div className="result-description">{item.description}</div>
       <div className="result-tags">
         {item.topics?.map(topic => (
-          <div className="tag" key={topic}>{topic}</div>
+          <div className="tag" key={item.id + topic}>{topic}</div>
         ))}
       </div>
       <div className="result-infos">

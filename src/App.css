@@ -1,6 +1,5 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  min-width: 1280px;
   text-align: center;
   background-color: #0d1116;
 }
@@ -9,28 +8,11 @@
   display: flex;
   flex-direction: column;
   min-width: 1280px;
-  width: 100%;
+  width: 100vw;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.observer-section {
+  width: 100vw;
+  height: 100px;
+  background-color: #161b22;
 }
