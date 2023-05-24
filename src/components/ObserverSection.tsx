@@ -11,12 +11,11 @@ const ObserverSection = ({ onRefresh }: ObserverSectionProps) => {
         if (entries[0].isIntersecting) {
           onRefresh()
         }
+      },
+      { 
+        rootMargin: '-10px',
+        threshold: 0.5
       }
-      // { 
-      //   root: refObserver?.current,
-      //   rootMargin: '0px',
-      //   threshold: 0.5
-      // }
     );
 
     if (refObserver?.current) {
@@ -30,12 +29,7 @@ const ObserverSection = ({ onRefresh }: ObserverSectionProps) => {
     };
   }, [onRefresh]);
 
-  return (
-    <div 
-      ref={refObserver}
-      className="observer-section"
-    />
-  )
+  return (<div ref={refObserver} className="observer-section" />)
 };
 
 export default ObserverSection; 
