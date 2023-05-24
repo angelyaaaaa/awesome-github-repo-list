@@ -9,10 +9,13 @@
   flex-direction: column;
   min-width: 1280px;
   width: 100vw;
+  position: relative;
 }
 
 .observer-section {
   width: 100vw;
   height: 50px;
-  background-color: #161b22;
+  background-color: #161b224d;
+  position: absolute;
+  bottom: 0;
 }

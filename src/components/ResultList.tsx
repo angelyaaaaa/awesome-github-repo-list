@@ -1,3 +1,5 @@
+import useVirtualDisplay from '../hooks/useVirtualDisplay';
+
 import '../styles/ResultList.css';
 
 export type ListItemType = {
@@ -12,13 +14,11 @@ export type ListItemType = {
   topics: string[] | undefined; // topics
 }
 
-type ResultListProps = {
-  list: ListItemType[];
-  isLoading: boolean;
-  error?: Error;
+type ResultRowProps = {
+  item: ListItemType;
 }
 
-const ResultRow = (item: ListItemType) => {
+const ResultRow = ({ item }: ResultRowProps) => {
   return (
     <div className="result-row">
 
@@ -41,18 +41,41 @@ const ResultRow = (item: ListItemType) => {
   )
 }
 
+type ResultListProps = {
+  list: ListItemType[];
+  isLoading: boolean;
+  error?: Error;
+};
+
 const ResultList = ({ list, isLoading, error }: ResultListProps) => {
+  const itemHeight = 180;
+  const visibleItems = 10;
+  const { startIndex, getEndIndex, refContainer } = useVirtualDisplay(itemHeight, visibleItems);
+
   return (
     <div className="result-list">
-      <dl>
-        {list.map((item) => (
-          <dt key={item.id}>
-            <ResultRow {...item} />
-          </dt>
-        ))}
-      </dl>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
+      <div className="virtual-container" >
+        <dl ref={refContainer}>
+          {list
+            .slice(startIndex, getEndIndex(list.length))
+            .map((item, index) => (
+              <dt
+                key={item.id}
+                style={{
+                  position: 'absolute',
+                  top: `${(startIndex + index) * itemHeight}px`,
+                  height: `${itemHeight}px`,
+                  width: '100%',
+                }}
+              >
+                <ResultRow item={item} />
+              </dt>
+            ))
+          }
+        </dl>
+        {isLoading && <p>Loading...</p>}
+        {error && <p>Error: {error.message}</p>}
+      </div>
     </div>
   )
 }

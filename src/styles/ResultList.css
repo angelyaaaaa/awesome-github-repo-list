@@ -1,6 +1,7 @@
 .result-list {
   width: 100%;
   min-height: 100vh;
+  position: relative;
 }
 .result-row {
   display: flex;
@@ -73,7 +74,16 @@
   }
 }
 
+.virtual-container {
+  height: 1080px;
+  overflow: auto;
 
+  & dl {
+    height: 1080px;
+    overflow: auto;
+    position: relative;
+  }
+}
 
 
 

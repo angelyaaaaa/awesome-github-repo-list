@@ -2,14 +2,14 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 import SearchInput from './components/SearchInput';
 import ResultList, { ListItemType } from './components/ResultList';
 import ObserverSection from './components/ObserverSection';
-import { useDebounce } from 'usehooks-ts';
+import { useDebounce } from 'use-debounce';
 import useFetchRepo from './hooks/useFetchRepos';
 
 import './App.css';
 
 const App = () => {
   const [keyword, setKeyword] = useState('');
-  const debouncedQuery = useDebounce(keyword, 800);
+  const [debouncedQuery] = useDebounce(keyword, 800);
   const { fetchRepo, list, isLoading, error } = useFetchRepo();
 
   useEffect(() => {
