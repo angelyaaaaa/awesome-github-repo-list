@@ -15,6 +15,7 @@ yarn start
 chrome version should be 112+ to implment css nesting function
 
 ## Structure
+```
 ├── src
 │   ├── components // functional components
 │   ├── hooks // UI logic or business logic
@@ -24,6 +25,7 @@ chrome version should be 112+ to implment css nesting function
 ├── package.json
 ├── .env // setting it first
 └── .gitignore
+```
 
 ## Performance Improvement
 - used `infinite scroll` to fetch data pieceful, instead of getting all in one time
